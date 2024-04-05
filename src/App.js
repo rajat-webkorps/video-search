@@ -7,7 +7,10 @@ import VideoList from "./components/VideoList";
 function App() {
   const [videos, setVideos] = useState([]); // Array for videos
   const [selectedVideo, setSelectedVideo] = useState(null); // Selected video object
-  const [videoDetails, setVideoDetails] = useState({duration: "",viewCount: "",}); // Duration and viewCount details
+  const [videoDetails, setVideoDetails] = useState({
+    duration: "",
+    viewCount: "",
+  }); // Duration and viewCount details
 
   const handleSubmit = async (termFromSearchBar) => {
     try {
@@ -15,9 +18,8 @@ function App() {
         params: {
           q: termFromSearchBar,
         },
-        
       });
-      console.log("This is term",termFromSearchBar);
+      console.log("This is term", termFromSearchBar);
       if (response.data.items.length === 0) {
         throw new Error("No videos found");
       }
@@ -33,18 +35,24 @@ function App() {
         },
       });
 
-      const thumb = response.data.items[0].snippet.thumbnails.default.url;
-      const title = response.data.items[0].snippet.title;
-      const chanlNam = response.data.items[0].snippet.channelTitle;
+      // const thumb = response.data.items[0].snippet.thumbnails.default.url;
+      // const title = response.data.items[0].snippet.title;
+      // const chanlNam = response.data.items[0].snippet.channelTitle;
       const duration = details.data.items[0].contentDetails.duration;
       const viewCount = details.data.items[0].statistics.viewCount;
 
       setVideoDetails({ duration, viewCount });
 
-      console.log("Thumbnail, Title, Duration, View count, and Channel Name.");
-      console.log(
-        `Thumbnail= ${thumb}, Title= ${title}, Duration= ${duration}, View count= ${viewCount}, and Channel Name= ${chanlNam}`
-      );
+      // console.log("Thumbnail, Title, Duration, View count, and Channel Name.");
+      // console.log(
+      //   `Thumbnail= ${thumb}, Title= ${title}, Duration= ${duration}, View count= ${viewCount}, and Channel Name= ${chanlNam}`
+      // );
+
+      console.log("Response Data",response.data);
+      console.log("Details Data", details.data);
+
+
+
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -62,15 +70,24 @@ function App() {
       <div className="ui container" style={{ marginTop: "1em" }}>
         <div className="wrapper center">
           <div className="logo">
-            <img src="https://t3.ftcdn.net/jpg/03/00/38/90/360_F_300389025_b5hgHpjDprTySl8loTqJRMipySb1rO0I.jpg" height="150" alt="Logo" />
+            <img
+              src="https://t3.ftcdn.net/jpg/03/00/38/90/360_F_300389025_b5hgHpjDprTySl8loTqJRMipySb1rO0I.jpg"
+              height="150"
+              alt="Logo"
+            />
           </div>
-            <h4>Tool to search within Video in 2 simple steps:</h4><br/>
+          <h4>Tool to search within Video in 2 simple steps:</h4>
+          <br />
           <div className="pageButton">
-            <button type="button" className="btn btn-success btn-circle btn-lg">1</button>
-            <h2 style={{ marginTop: "5px",color:"green" }}>----------</h2>
-            <button type="button" className="btn btn-success btn-circle btn-lg">2</button>
-          </div><br/><br/><br/>
-          <div className="search" >
+            <button type="button" className="btn btn-success btn-circle btn-lg">
+              1
+            </button>
+            <h2 style={{ marginTop: "5px", color: "green" }}>----------</h2>
+            <button type="button" className="btn btn-success btn-circle btn-lg">
+              2
+            </button>
+          </div><br/>
+          <div className="search">
             <b>Select the video link or video channel from youtube.</b>
             (You can select up to 10 videos or 1 channel in this demo version)
           </div>
@@ -89,6 +106,7 @@ function App() {
                 <VideoList
                   handleVideoSelect={handleVideoSelect}
                   videos={videos}
+                  onClose={handleClose}
                 />
               </div>
             </div>
@@ -100,3 +118,4 @@ function App() {
 }
 
 export default App;
+
