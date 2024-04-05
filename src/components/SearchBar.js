@@ -14,19 +14,19 @@ const SearchBar = ({ handleFormSubmit }) => {
 
     return (
         <>
-            <h2 style={{ textAlign: "center" }}>
-                <img
-                    style={{ width: '200px', height: '100px', justifyContent: 'center' }}
-                    src='https://t3.ftcdn.net/jpg/04/74/05/94/360_F_474059464_qldYuzxaUWEwNTtYBJ44VN89ARuFktHW.jpg'
-                    alt="youtube logo"
-                />
-                Hello
-            </h2>
             <div className='search-bar ui segment'>
                 <form onSubmit={handleSubmit} className='ui form'>
                     <div className='field'>
-                        <label htmlFor="video-search">Video Search</label>
-                        <input onChange={handleChange} name='video-search' type="text" placeholder="Search.." />
+                        <div className="dropdown">
+                            <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Select Link Type
+                            </button>
+                            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <p className="dropdown-item">Youtube Video</p>
+                                <p className="dropdown-item">Youtube Channel</p>
+                            </div>
+                        </div>
+                        <input className="form-control form-control-lg col-sm-10" type="text" onChange={handleChange} name='video-search' placeholder="Enter Link" />
                     </div>
                 </form>
             </div>

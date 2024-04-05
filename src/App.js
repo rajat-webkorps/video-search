@@ -63,12 +63,13 @@ function App() {
           <div className="logo">
             <img src="logo.avif" height="150" alt="Logo" />
           </div>
-          <div>
-            <h4>Tool to search within Video in 2 simple steps:</h4>
-            <div className="circle">1</div>
-            <div className="circle">1</div>
-          </div>
-          <div className="search">
+            <h4>Tool to search within Video in 2 simple steps:</h4><br/>
+          <div className="pageButton">
+            <button type="button" className="btn btn-success btn-circle btn-lg">1</button>
+            <h2 style={{ marginTop: "5px",color:"green" }}>----------</h2>
+            <button type="button" className="btn btn-success btn-circle btn-lg">2</button>
+          </div><br/><br/><br/>
+          <div className="search" >
             <b>Select the video link or video channel from youtube.</b>
             (You can select up to 10 videos or 1 channel in this demo version)
           </div>

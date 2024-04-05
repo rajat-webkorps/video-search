@@ -10,19 +10,32 @@
     width: 50%;
     text-align: center;
   }
-  .circle {
-    display: inline-block;
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    padding: 8px;
-    background: #fff;
-    border: 2px solid #666;
-    color: #666;
-    text-align: center;
-    font: 32px Arial, sans-serif;
-    
-}
-.circle:hover{
-    background-color: greenyellow;
-}
+  .btn-circle {
+    width: 50px;
+    height: 50px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 50px;
+    border-color: white;
+    box-shadow: 0 0 10px green;
+
+  }
+
+  .btn-circle:hover {
+    background-color: white;
+    color: green;
+    width: 50px;
+    height: 50px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 50px;
+    border-color: green;
+  }
+  .pageButton{
+    display: inline-flex;
+  }
+  .field{
+    display: inline-flex;
+  }
