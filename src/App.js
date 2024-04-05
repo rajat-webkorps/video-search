@@ -15,8 +15,9 @@ function App() {
         params: {
           q: termFromSearchBar,
         },
+        
       });
-
+      console.log("This is term",termFromSearchBar);
       if (response.data.items.length === 0) {
         throw new Error("No videos found");
       }
@@ -61,7 +62,7 @@ function App() {
       <div className="ui container" style={{ marginTop: "1em" }}>
         <div className="wrapper center">
           <div className="logo">
-            <img src="logo.avif" height="150" alt="Logo" />
+            <img src="https://t3.ftcdn.net/jpg/03/00/38/90/360_F_300389025_b5hgHpjDprTySl8loTqJRMipySb1rO0I.jpg" height="150" alt="Logo" />
           </div>
             <h4>Tool to search within Video in 2 simple steps:</h4><br/>
           <div className="pageButton">

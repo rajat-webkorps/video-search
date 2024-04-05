@@ -27,6 +27,7 @@ const SearchBar = ({ handleFormSubmit }) => {
                             </div>
                         </div>
                         <input className="form-control form-control-lg col-sm-10" type="text" onChange={handleChange} name='video-search' placeholder="Enter Link" />
+                        
                     </div>
                 </form>
             </div>
