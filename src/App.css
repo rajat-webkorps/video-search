@@ -1,0 +1,28 @@
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .center {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+  }
+  .circle {
+    display: inline-block;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+    background: #fff;
+    border: 2px solid #666;
+    color: #666;
+    text-align: center;
+    font: 32px Arial, sans-serif;
+    
+}
+.circle:hover{
+    background-color: greenyellow;
+}
