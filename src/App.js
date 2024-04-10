@@ -23,7 +23,7 @@ function App() {
       if (response.data.items.length === 0) {
         throw new Error("No videos found");
       }
-
+      console.log(response.data.items[0].id.kind);
       setVideos(response.data.items);
       setSelectedVideo(null);
 
@@ -47,11 +47,6 @@ function App() {
       // console.log(
       //   `Thumbnail= ${thumb}, Title= ${title}, Duration= ${duration}, View count= ${viewCount}, and Channel Name= ${chanlNam}`
       // );
-
-      console.log("Response Data",response.data);
-      console.log("Details Data", details.data);
-
-
 
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -102,16 +97,16 @@ function App() {
                   viewCount={videoDetails.viewCount}
                 />
               </div>
-              <div className="five wide column">
+            </div>
+          </div>
+        </div>
+        <div className="ten wide column">
                 <VideoList
                   handleVideoSelect={handleVideoSelect}
                   videos={videos}
                   onClose={handleClose}
                 />
               </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
