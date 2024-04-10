@@ -7,7 +7,7 @@ const VideoList = ({ videos, handleVideoSelect }) => {
         if (video.id.kind === "youtube#channel") {
             return null;
         }
-        return <VideoItem key={video.id.videoId} video={video} handleVideoSelect={handleVideoSelect} />;
+        return <VideoItem key={`${video.id.videoId}-${video.snippet.title}`} video={video} handleVideoSelect={handleVideoSelect} />;
     });
 
     return (

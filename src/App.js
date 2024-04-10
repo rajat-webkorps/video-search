@@ -104,7 +104,6 @@ function App() {
                 <VideoList
                   handleVideoSelect={handleVideoSelect}
                   videos={videos}
-                  onClose={handleClose}
                 />
               </div>
       </div>
