@@ -34,19 +34,10 @@ function App() {
           part: "contentDetails,statistics",
         },
       });
-
-      // const thumb = response.data.items[0].snippet.thumbnails.default.url;
-      // const title = response.data.items[0].snippet.title;
-      // const chanlNam = response.data.items[0].snippet.channelTitle;
       const duration = details.data.items[0].contentDetails.duration;
       const viewCount = details.data.items[0].statistics.viewCount;
 
       setVideoDetails({ duration, viewCount });
-
-      // console.log("Thumbnail, Title, Duration, View count, and Channel Name.");
-      // console.log(
-      //   `Thumbnail= ${thumb}, Title= ${title}, Duration= ${duration}, View count= ${viewCount}, and Channel Name= ${chanlNam}`
-      // );
 
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -59,6 +50,11 @@ function App() {
   const handleClose = () => {
     setSelectedVideo(null);
   };
+
+  const handleRemove = (videoToRemove) =>{
+    const updatedVideos = videos.filter(video => video.id.videoId !== videoToRemove);
+    setVideos(updatedVideos);
+  }
 
   return (
     <div className="App">
@@ -104,6 +100,7 @@ function App() {
                 <VideoList
                   handleVideoSelect={handleVideoSelect}
                   videos={videos}
+                  handleRemove={handleRemove}
                 />
               </div>
       </div>

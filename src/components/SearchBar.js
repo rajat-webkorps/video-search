@@ -8,7 +8,6 @@ const SearchBar = ({ handleFormSubmit }) => {
         setSelectedItem(item);
     };
 
-
     const handleChange = event => {
         setTerm(event.target.value);
     };

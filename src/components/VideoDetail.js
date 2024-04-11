@@ -14,7 +14,6 @@ const VideoDetail = ({ video, onClose, duration,viewCount }) => {
         <p className="card-text">Duration : { duration}</p>
         <p className="card-text">View Count : {viewCount}</p>
         <p className="card-text">Channel Name : {video.snippet.channelTitle}</p>
-        {/* <a href={video} className="btn btn-primary">Go somewhere</a> */}
       </div>
     </div>
   );
